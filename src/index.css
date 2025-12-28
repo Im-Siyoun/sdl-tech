@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Open-Sans, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --design-width: 1920;
+  --scale: 1;
+}
+
+
+@theme {
+  --color-primary:#142755;
+  --color-primary-light: #2C3F73;
+  --color-primary-dark: #0E1B3C;
+
+  --color-accent: #F9CA42;
+  --color-accent-light: #FFE38F;
+  --color-accent-dark: #C89F26;
+}
+
+@font-face {
+  font-family: Open-Sans;
+  src: url("/OpenSans-VariableFont_wdth,wght.ttf");
+}
+
+@media (max-width: 1920px) {
+  :root {
+    --scale: calc(100vw / var(--design-width));
+  }
+}
+
+@layer utilities {
+  .clip-hex {
+    clip-path: polygon(
+      25% 6.7%,
+      75% 6.7%,
+      100% 50%,
+      75% 93.3%,
+      25% 93.3%,
+      0% 50%
+    );
+  }
+}
