@@ -4,7 +4,6 @@ import { ValueFrameR } from '../frames/ValueFrameR';
 export function ValuesBlock() {
   return (
     <div className="relative flex flex-col mt-4 md:mt-6 lg:mt-8">
-      {/* 위쪽 행 - 3개 (Reliability, Transparency, Sustainability) */}
       <div className="flex flex-col md:flex-row justify-evenly gap-4 md:gap-2">
         <ValueFrame
           title="Reliability"
@@ -29,7 +28,6 @@ sustainable operations."
         />
       </div>
 
-      {/* 아래쪽 행 - 2개 (Integrity, Excellence) - 위로 겹치게 */}
       <div className="flex flex-col md:flex-row w-full md:w-[70%] mx-auto justify-evenly gap-4 md:gap-2 mt-4 md:-mt-12 lg:-mt-20">
         <ValueFrameR
           title="Integrity"

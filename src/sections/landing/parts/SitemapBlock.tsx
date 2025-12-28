@@ -24,13 +24,13 @@ export function SitemapBlock() {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <ul>SDL Europe</ul>
         <li>Address Warsaw HQ</li>
         <li>TEL. +82 10 1234 5678</li>
         <li>e-mail test@example.com</li>
         <li>Mon–Fri 09:00–18:00 (CET) </li>
-      </div>
+      </div> */}
       <div>
         <ul>SDL Korea</ul>
         <li>Address Warsaw HQ</li>

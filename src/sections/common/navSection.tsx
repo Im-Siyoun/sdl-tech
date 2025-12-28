@@ -39,7 +39,6 @@ export function NavSection() {
       <ul className="flex flex-row gap-6 list-none items-center whitespace-nowrap">
         {navItems.map((name) => (
           <li key={name} className="relative group">
-            {/* 상단 메뉴 텍스트 */}
             <a
               href="#"
               className="px-2 py-1 block hover:opacity-90"
@@ -52,7 +51,6 @@ export function NavSection() {
             {/* 드롭다운 */}
             <MenuFrame
               items={menus[name]}
-              // 오른쪽 끝 메뉴들은 화면 밖으로 삐져나갈 수 있으니 right 정렬 추천
               align={name === "Contact" || name === "Case Studies" ? "right" : "left"}
             />
           </li>

@@ -20,7 +20,6 @@ export function MenuFrame({
         'transition duration-200 ease-out',
       ].join(' ')}
     >
-      {/* 말풍선/카드 */}
       <div className="relative min-w-[220px] bg-white text-primary-dark shadow-lg border border-black/10 rounded-md">
         <ul className="list-none p-4 space-y-2">
           {items.map((it) => (
