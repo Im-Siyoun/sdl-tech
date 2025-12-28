@@ -17,14 +17,14 @@ you can trust."
           content="Maintaining transparent 
 management practices and providing clear, 
 honest service to every client."
-          imgPath="value_1.jpg"
+          imgPath="value_3.jpg"
         />
         <ValueFrame
           title="Sustainability"
           content="Supporting efficient maintenance 
 and eco-friendly logistics for long-term, 
 sustainable operations."
-          imgPath="value_1.jpg"
+          imgPath="value_5.jpg"
         />
       </div>
 
@@ -34,14 +34,14 @@ sustainable operations."
           content="Connecting technology, 
 industry, field operations, and
 data into one unified system."
-          imgPath="value_1.jpg"
+          imgPath="value_2.jpg"
         />
         <ValueFrameR
           title="Excellence"
           content="Pursuing performance-driven
 management with a focus on 
 quality and results."
-          imgPath="value_1.jpg"
+          imgPath="value_4.jpg"
         />
       </div>
     </div>

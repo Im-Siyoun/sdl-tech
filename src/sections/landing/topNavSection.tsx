@@ -1,62 +1,70 @@
+import { Link } from 'react-router-dom';
 import { MenuFrame } from '../common/frames/MenuFrame';
 
 export function TopNavSection() {
   const menus = {
     'About Us': [
-      { label: 'Overview', href: '/about/overview' },
+      { label: 'Overview', href: '/about' },
       { label: 'CEO message', href: '/about/ceo' },
-      { label: 'Our Values', href: '/about/values' },
+      { label: 'Our Values', href: '#values', scrollTo: 'values' },
     ],
     'Our Business': [
-      { label: 'Solutions', href: '/business/solutions' },
-      { label: 'Platform', href: '/business/platform' },
-      { label: 'Partners', href: '/business/partners' },
+      {
+        label: 'Total Supply-Chain Solution',
+        href: '/business',
+        scrollTo: 'supply',
+      },
+      { label: 'Real Estate Leasing', href: '/business', scrollTo: 'leasing' },
+      { label: 'Manpower Supply', href: '/business', scrollTo: 'manpower' },
+      {
+        label: 'Reverse Engineering',
+        href: '/business',
+        scrollTo: 'engineering',
+      },
     ],
-    'Global Presence': [
-      { label: 'Regions', href: '/global/regions' },
-      { label: 'Offices', href: '/global/offices' },
-    ],
-    'Case Studies': [
-      { label: 'Logistics', href: '/cases/logistics' },
-      { label: 'Manufacturing', href: '/cases/manufacturing' },
-    ],
-    Contact: [
-      { label: 'Inquiry', href: '/contact' },
-      { label: 'Careers', href: '/careers' },
-    ],
+    'Global Presence': [],
+    Contact: [],
   } as const;
 
   const navItems = [
     'About Us',
     'Our Business',
     'Global Presence',
-    'Case Studies',
     'Contact',
   ] as const;
 
+  const directLinks: Record<string, string> = {
+    'About Us': '/about',
+    'Our Business': '/business',
+    'Global Presence': '/global',
+  };
+
   return (
     <div className="flex flex-row items-start justify-between w-full py-3 md:py-5 gap-0 text-accent">
-      <div className="flex flex-col items-start justify-center pt-4 md:pt-8 shrink-0">
+      <Link
+        to="/"
+        className="flex flex-col items-start justify-center pt-4 md:pt-8 shrink-0"
+      >
         <img
-          className="w-32 md:w-40 lg:w-[20vw] lg:max-w-60 h-auto"
+          className="w-32 md:w-40 lg:w-[20vw] lg:max-w-60 h-auto cursor-pointer"
           src="/logo_light.png"
           alt="logo"
         />
-      </div>
+      </Link>
       <div className="flex w-full"></div>
       <ul className="hidden md:flex flex-row gap-4 lg:gap-6 list-none items-center whitespace-nowrap pt-4 md:pt-8 text-sm md:text-base">
         {navItems.map((name) => (
           <li key={name} className="relative group">
-            <a href="#" className="px-2 py-1 block hover:opacity-90">
+            <a
+              href={directLinks[name] || '#'}
+              className="px-2 py-1 block hover:opacity-90"
+            >
               {name}
             </a>
 
-            <MenuFrame
-              items={menus[name]}
-              align={
-                name === 'Contact' || name === 'Case Studies' ? 'right' : 'left'
-              }
-            />
+            {menus[name].length > 0 && (
+              <MenuFrame items={menus[name]} align="left" />
+            )}
           </li>
         ))}
       </ul>

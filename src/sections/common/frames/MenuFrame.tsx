@@ -1,6 +1,9 @@
+import { useLocation, useNavigate } from 'react-router-dom';
+
 type MenuItem = {
   label: string;
   href?: string;
+  scrollTo?: string;
 };
 
 export function MenuFrame({
@@ -10,6 +13,41 @@ export function MenuFrame({
   items: readonly MenuItem[];
   align?: 'left' | 'right';
 }) {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    item: MenuItem,
+  ) => {
+    if (item.scrollTo) {
+      e.preventDefault();
+
+      const targetPage = item.href || '/';
+      const isOnTargetPage = location.pathname === targetPage;
+
+      if (isOnTargetPage) {
+        if (item.scrollTo === 'top') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const element = document.getElementById(item.scrollTo);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      } else {
+        if (item.scrollTo === 'top') {
+          navigate(targetPage);
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }, 100);
+        } else {
+          navigate(`${targetPage}#${item.scrollTo}`);
+        }
+      }
+    }
+  };
+
   return (
     <div
       className={[
@@ -26,6 +64,7 @@ export function MenuFrame({
             <li key={it.label}>
               <a
                 href={it.href ?? '#'}
+                onClick={(e) => handleClick(e, it)}
                 className="block text-lg leading-snug text-primary-dark hover:text-accent-dark"
               >
                 {it.label}

@@ -7,10 +7,19 @@ interface ValueFrameProps {
 export function ValueFrameR({ title, content, imgPath }: ValueFrameProps) {
   return (
     <div className="flex flex-col w-full md:w-[45%] lg:w-[25vh] items-center text-center">
-      <div
-        className="w-20 sm:w-24 md:w-28 lg:w-36 xl:w-40 aspect-square clip-hex bg-cover bg-center"
-        style={{ backgroundImage: `url(/landing/${imgPath})` }}
-      />
+      <div className="relative w-20 sm:w-24 md:w-28 lg:w-36 xl:w-40 aspect-square">
+        <div
+          className="absolute inset-0 clip-hex bg-cover bg-center"
+          style={{ backgroundImage: `url(/landing/${imgPath})` }}
+        />
+        <div
+          className="absolute inset-0 clip-hex"
+          style={{
+            background:
+              'linear-gradient(to bottom right, transparent 0%, transparent 30%, rgba(249, 202, 66, 0.5) 100%)',
+          }}
+        />
+      </div>
       <div
         className="mb-1 md:mb-2 h-0 w-0"
         style={{

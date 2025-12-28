@@ -1,38 +1,53 @@
-import { MenuFrame } from "./frames/MenuFrame";
+import { Link } from 'react-router-dom';
+import { MenuFrame } from './frames/MenuFrame';
 
 export function NavSection() {
   const menus = {
-    "About Us": [
-      { label: "Overview", href: "/about/overview" },
-      { label: "CEO message", href: "/about/ceo" },
-      { label: "Our Values", href: "/about/values" },
+    'About Us': [
+      { label: 'Overview', href: '/about' },
+      { label: 'CEO message', href: '/about/ceo' },
+      { label: 'Our Values', href: '#values', scrollTo: 'values' },
     ],
-    "Our Business": [
-      { label: "Solutions", href: "/business/solutions" },
-      { label: "Platform", href: "/business/platform" },
-      { label: "Partners", href: "/business/partners" },
+    'Our Business': [
+      {
+        label: 'Total Supply-Chain Solution',
+        href: '/business',
+        scrollTo: 'supply',
+      },
+      { label: 'Real Estate Leasing', href: '/business', scrollTo: 'leasing' },
+      { label: 'Manpower Supply', href: '/business', scrollTo: 'manpower' },
+      {
+        label: 'Reverse Engineering',
+        href: '/business',
+        scrollTo: 'engineering',
+      },
     ],
-    "Global Presence": [
-      { label: "Regions", href: "/global/regions" },
-      { label: "Offices", href: "/global/offices" },
-    ],
-    "Case Studies": [
-      { label: "Logistics", href: "/cases/logistics" },
-      { label: "Manufacturing", href: "/cases/manufacturing" },
-    ],
-    "Contact": [
-      { label: "Inquiry", href: "/contact" },
-      { label: "Careers", href: "/careers" },
-    ],
+    'Global Presence': [],
+    Contact: [],
   } as const;
 
-  const navItems = ["About Us", "Our Business", "Global Presence", "Case Studies", "Contact"] as const;
+  const navItems = [
+    'About Us',
+    'Our Business',
+    'Global Presence',
+    'Contact',
+  ] as const;
+
+  const directLinks: Record<string, string> = {
+    'About Us': '/about',
+    'Our Business': '/business',
+    'Global Presence': '/global',
+  };
 
   return (
     <div className="flex flex-row items-center justify-between w-full py-5 text-accent bg-primary">
-      <div className="shrink-0">
-        <img className="w-[10vw] max-w-40 h-auto" src="/logo_light.png" alt="logo" />
-      </div>
+      <Link to="/" className="shrink-0">
+        <img
+          className="w-[10vw] max-w-40 h-auto cursor-pointer"
+          src="/logo_light.png"
+          alt="logo"
+        />
+      </Link>
 
       <div className="flex-1" />
 
@@ -40,19 +55,15 @@ export function NavSection() {
         {navItems.map((name) => (
           <li key={name} className="relative group">
             <a
-              href="#"
+              href={directLinks[name] || '#'}
               className="px-2 py-1 block hover:opacity-90"
-              // 클릭 이동 막고 hover만 쓰고 싶으면 아래 주석 해제
-              // onClick={(e) => e.preventDefault()}
             >
               {name}
             </a>
 
-            {/* 드롭다운 */}
-            <MenuFrame
-              items={menus[name]}
-              align={name === "Contact" || name === "Case Studies" ? "right" : "left"}
-            />
+            {menus[name].length > 0 && (
+              <MenuFrame items={menus[name]} align="left" />
+            )}
           </li>
         ))}
       </ul>

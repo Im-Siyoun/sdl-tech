@@ -8,15 +8,15 @@ export function TitleBlock() {
       </h1>
 
       <h2 className="text-xs sm:text-sm md:text-base lg:text-lg text-primary-dark font-medium leading-relaxed">
-        This is a placeholder text for layout testing.
+        Bridging industries with innovative logistics,
         <br />
-        The real content will be added later.
+        real estate, and workforce solutions worldwide.
         <br />
-        Use this only to check line spacing and typography.
+        From supply chain management to technical services,
         <br />
-        These sentences do not have any actual meaning.
+        we deliver excellence across Poland, Canada, and beyond.
         <br />
-        Amazing copy will live here someday.
+        Your trusted partner for global operations.
       </h2>
     </div>
   );
