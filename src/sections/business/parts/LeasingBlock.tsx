@@ -20,8 +20,8 @@ export function LeasingBlock() {
       <div className="flex-1 flex flex-col gap-6 max-w-2xl">
         <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed">
           We provide industrial real estate leasing in both{' '}
-          <span className="text-accent font-semibold">Poland</span> and{' '}
-          <span className="text-accent font-semibold">Canada</span>, supporting
+          <span className="text-accent font-semibold">Europe</span> and{' '}
+          <span className="text-accent font-semibold">America</span>, supporting
           seamless logistics and operational activities for our clients.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

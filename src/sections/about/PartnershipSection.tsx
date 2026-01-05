@@ -1,4 +1,8 @@
+import { useContactModal } from '../../components/ContactModal';
+
 export function PartnershipSection() {
+  const { openModal } = useContactModal();
+
   const columns = [
     {
       title: 'What We Support',
@@ -64,12 +68,12 @@ export function PartnershipSection() {
             </div>
           ))}
         </div>
-        <a
-          href="/contact"
-          className="mx-auto w-60 px-4 py-1.5 md:px-5 md:py-2 border-2 border-accent text-accent font-semibold text-lg md:text-ls rounded-lg hover:bg-accent/10 transition-colors text-center mt-12"
+        <button
+          onClick={openModal}
+          className="mx-auto w-60 px-4 py-1.5 md:px-5 md:py-2 border-2 border-accent text-accent font-semibold text-lg md:text-ls rounded-lg hover:bg-accent/10 transition-colors text-center mt-12 cursor-pointer"
         >
-          working with us
-        </a>
+          Get in Touch
+        </button>
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { MenuFrame } from './frames/MenuFrame';
+import { useContactModal } from '../../components/ContactModal';
 
 export function NavSection() {
+  const { openModal } = useContactModal();
   const menus = {
     'About Us': [
       { label: 'Overview', href: '/about' },
@@ -54,12 +56,21 @@ export function NavSection() {
       <ul className="flex flex-row gap-6 list-none items-center whitespace-nowrap">
         {navItems.map((name) => (
           <li key={name} className="relative group">
-            <a
-              href={directLinks[name] || '#'}
-              className="px-2 py-1 block hover:opacity-90"
-            >
-              {name}
-            </a>
+            {name === 'Contact' ? (
+              <button
+                onClick={openModal}
+                className="px-2 py-1 block hover:opacity-90 cursor-pointer"
+              >
+                {name}
+              </button>
+            ) : (
+              <a
+                href={directLinks[name] || '#'}
+                className="px-2 py-1 block hover:opacity-90"
+              >
+                {name}
+              </a>
+            )}
 
             {menus[name].length > 0 && (
               <MenuFrame items={menus[name]} align="left" />

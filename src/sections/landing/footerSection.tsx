@@ -1,4 +1,8 @@
+import { Link } from 'react-router-dom';
+import { useContactModal } from '../../components/ContactModal';
+
 export function FooterSection() {
+  const { openModal } = useContactModal();
   return (
     <div className="w-full flex flex-col lg:flex-row justify-between bg-[#EDEDED] px-6 md:px-10 lg:px-16 py-4 md:py-5 lg:py-6 text-black text-xs md:text-sm lg:text-base gap-4 lg:gap-0">
       <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6">
@@ -11,9 +15,21 @@ export function FooterSection() {
           </div>
 
           <ul className="mt-1.5 md:mt-2 list-none space-y-0.5 md:space-y-1 text-primary-dark/80 text-[10px] md:text-xs lg:text-sm">
-            <li>business overview</li>
-            <li>CEO introduce</li>
-            <li>core values</li>
+            <li>
+              <Link to="/about" className="hover:underline">
+                Business Overview
+              </Link>
+            </li>
+            <li>
+              <Link to="/about/ceo" className="hover:underline">
+                Welcome Message
+              </Link>
+            </li>
+            <li>
+              <Link to="/#values" className="hover:underline">
+                Core Values
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="font-normal">
@@ -25,10 +41,26 @@ export function FooterSection() {
           </div>
 
           <ul className="mt-1.5 md:mt-2 list-none space-y-0.5 md:space-y-1 text-primary-dark/80 text-[10px] md:text-xs lg:text-sm">
-            <li>Total Supply-Chain Solutions</li>
-            <li>Real Estate Leasing & Management</li>
-            <li>Manpower Supply & Workforce Solutions</li>
-            <li>Reverse Engineering & System Analysis</li>
+            <li>
+              <Link to="/business#supply" className="hover:underline">
+                Total Supply-Chain Solutions
+              </Link>
+            </li>
+            <li>
+              <Link to="/business#leasing" className="hover:underline">
+                Real Estate Leasing & Management
+              </Link>
+            </li>
+            <li>
+              <Link to="/business#manpower" className="hover:underline">
+                Manpower Supply & Workforce Solutions
+              </Link>
+            </li>
+            <li>
+              <Link to="/business#engineering" className="hover:underline">
+                Reverse Engineering & System Analysis
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="font-normal">
@@ -40,10 +72,19 @@ export function FooterSection() {
           </div>
 
           <ul className="mt-1.5 md:mt-2 list-none space-y-0.5 md:space-y-1 text-primary-dark/80 text-[10px] md:text-xs lg:text-sm">
-            <li>Global Presences</li>
-            <li>Timeline</li>
-            <li>Case Studies</li>
-            <li>Contact</li>
+            <li>
+              <Link to="/global" className="hover:underline">
+                Global Presences
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={openModal}
+                className="hover:underline cursor-pointer"
+              >
+                Contact
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -57,10 +98,9 @@ export function FooterSection() {
           </div>
 
           <ul className="mt-1.5 md:mt-2 list-none space-y-0.5 md:space-y-1 text-primary-dark/80 text-[10px] md:text-xs lg:text-sm">
-            <li>Address Warsaw HQ</li>
-            <li>TEL. +82 10 1234 5678</li>
-            <li>e-mail test@example.com</li>
-            <li>Mon–Fri 09:00–18:00 (CET) </li>
+            <li>TEL. +48 573 365 562</li>
+            <li>@ EU@sdltech.net</li>
+            <li>Mon–Fri 08:30–17:30 (CET)</li>
           </ul>
         </div>
 
@@ -68,15 +108,14 @@ export function FooterSection() {
           <div className="flex flex-row gap-1.5 items-center">
             <div className="w-1.5 h-3 md:h-4 bg-accent-dark" />
             <div className="text-sm md:text-base font-bold text-primary-dark">
-              SDL Korea
+              SDL America
             </div>
           </div>
 
           <ul className="mt-1.5 md:mt-2 list-none space-y-0.5 md:space-y-1 text-primary-dark/80 text-[10px] md:text-xs lg:text-sm">
-            <li>Address Warsaw HQ</li>
-            <li>TEL. +82 10 1234 5678</li>
-            <li>e-mail test@example.com</li>
-            <li>Mon–Fri 09:00–18:00 (CET) </li>
+            <li>TEL. +1 (703) 383 4591</li>
+            <li>@ info@sdltech.net</li>
+            <li>Mon–Fri 09:00–18:00 (EST)</li>
           </ul>
         </div>
       </div>

@@ -9,14 +9,6 @@ export function CeoSection() {
           <HeroBlock />
           <ProfileBlock />
         </div>
-
-        <div className="hidden lg:block absolute bottom-0 right-0 h-[80%] w-auto">
-          <img
-            src="/ceo/ceo.png"
-            alt="CEO"
-            className="h-full w-auto object-contain object-bottom"
-          />
-        </div>
       </div>
     </div>
   );

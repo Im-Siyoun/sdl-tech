@@ -6,27 +6,12 @@ export function RegionSection() {
         {
           name: 'Poland (Headquarters)',
           city: 'Warsaw',
-          note: 'Detailed address to be updated upon office lease finalization',
+          note: 'To Be Announced',
         },
         {
           name: 'Canada',
           city: 'Calgary / Edmonton',
-          note: 'Detailed address to be updated upon office lease finalization',
-        },
-      ],
-    },
-    {
-      status: 'upcoming-2026',
-      locations: [
-        {
-          name: 'Uzbekistan',
-          city: 'TBD',
-          note: 'Branch or subsidiary opening planned for 2026',
-        },
-        {
-          name: 'United States',
-          city: 'TBD',
-          note: 'Branch opening planned for 2026',
+          note: 'To Be Announced',
         },
       ],
     },
@@ -34,14 +19,29 @@ export function RegionSection() {
       status: 'upcoming-2027',
       locations: [
         {
+          name: 'Uzbekistan',
+          city: 'TBD',
+          note: 'Branch or subsidiary opening planned for 2027',
+        },
+        {
+          name: 'United States',
+          city: 'TBD',
+          note: 'Branch opening planned for 2027',
+        },
+      ],
+    },
+    {
+      status: 'upcoming-2028',
+      locations: [
+        {
           name: 'Egypt',
           city: 'TBD',
-          note: 'Subsidiary opening planned for 2027',
+          note: 'Subsidiary opening planned for 2028',
         },
         {
           name: 'Greece',
           city: 'TBD',
-          note: 'Subsidiary opening planned for 2027',
+          note: 'Subsidiary opening planned for 2028',
         },
       ],
     },
@@ -99,11 +99,11 @@ export function RegionSection() {
             </div>
           </div>
 
-          {/* Upcoming 2026 */}
+          {/* Upcoming 2027 */}
           <div className="flex flex-col">
             <h3 className="text-white/70 text-base md:text-lg font-semibold mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-white/50 rounded-full" />
-              Opening in 2026
+              Opening in 2027
             </h3>
             <div className="space-y-4">
               {regions[1].locations.map((loc, index) => (
@@ -122,11 +122,11 @@ export function RegionSection() {
             </div>
           </div>
 
-          {/* Upcoming 2027 */}
+          {/* Upcoming 2028 */}
           <div className="flex flex-col">
             <h3 className="text-white/70 text-base md:text-lg font-semibold mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-white/50 rounded-full" />
-              Opening in 2027
+              Opening in 2028
             </h3>
             <div className="space-y-4">
               {regions[2].locations.map((loc, index) => (

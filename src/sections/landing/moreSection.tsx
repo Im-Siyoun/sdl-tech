@@ -1,4 +1,8 @@
+import { useContactModal } from '../../components/ContactModal';
+
 export function MoreSection() {
+  const { openModal } = useContactModal();
+
   return (
     <div className="w-full flex flex-col items-center justify-center px-6 md:px-10 lg:px-16 py-6 md:py-8 lg:py-10 bg-primary text-accent">
       <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center leading-tight">
@@ -17,12 +21,12 @@ export function MoreSection() {
         >
           About Our Company
         </a>
-        <a
-          href="/contact"
-          className="px-4 py-1.5 md:px-5 md:py-2 border-2 border-accent text-accent font-semibold text-[10px] md:text-xs rounded-lg hover:bg-accent/10 transition-colors text-center"
+        <button
+          onClick={openModal}
+          className="px-4 py-1.5 md:px-5 md:py-2 border-2 border-accent text-accent font-semibold text-[10px] md:text-xs rounded-lg hover:bg-accent/10 transition-colors text-center cursor-pointer"
         >
-          Get in Touch
-        </a>
+          Contact Us
+        </button>
       </div>
     </div>
   );
