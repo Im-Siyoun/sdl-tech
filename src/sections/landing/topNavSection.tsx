@@ -8,7 +8,7 @@ export function TopNavSection() {
     'About Us': [
       { label: 'Overview', href: '/about' },
       { label: 'CEO message', href: '/about/ceo' },
-      { label: 'Our Values', href: '#values', scrollTo: 'values' },
+      { label: 'Our Values', href: '/#values'},
     ],
     'Our Business': [
       {

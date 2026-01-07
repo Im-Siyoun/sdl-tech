@@ -98,8 +98,22 @@ export function FooterSection() {
           </div>
 
           <ul className="mt-1.5 md:mt-2 list-none space-y-0.5 md:space-y-1 text-primary-dark/80 text-[10px] md:text-xs lg:text-sm">
-            <li>TEL. +48 573 365 562</li>
-            <li>@ EU@sdltech.net</li>
+            <li className="flex items-center gap-1">
+              <img
+                src="/call.png"
+                alt="call"
+                className="w-3 h-3 md:w-4 md:h-4"
+              />
+              +48 573 365 562
+            </li>
+            <li className="flex items-center gap-2">
+              <img
+                src="/email.png"
+                alt="email"
+                className="w-3 h-3 md:w-4 md:h-4"
+              />
+              EU@sdltech.net
+            </li>
             <li>Mon–Fri 08:30–17:30 (CET)</li>
           </ul>
         </div>
@@ -113,8 +127,22 @@ export function FooterSection() {
           </div>
 
           <ul className="mt-1.5 md:mt-2 list-none space-y-0.5 md:space-y-1 text-primary-dark/80 text-[10px] md:text-xs lg:text-sm">
-            <li>TEL. +1 (703) 383 4591</li>
-            <li>@ info@sdltech.net</li>
+            <li className="flex items-center gap-1">
+              <img
+                src="/call.png"
+                alt="call"
+                className="w-3 h-3 md:w-4 md:h-4"
+              />
+              +1 (703) 383 4591
+            </li>
+            <li className="flex items-center gap-2">
+              <img
+                src="/email.png"
+                alt="email"
+                className="w-3 h-3 md:w-4 md:h-4"
+              />
+              info@sdltech.net
+            </li>
             <li>Mon–Fri 09:00–18:00 (EST)</li>
           </ul>
         </div>

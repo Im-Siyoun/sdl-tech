@@ -21,8 +21,8 @@ export function ManpowerBlock() {
           <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed mb-4">
             Leveraging a diverse and reliable talent pool, SDL Tech offers
             professional manpower solutions across both{' '}
-            <span className="text-accent font-semibold">Poland</span> and{' '}
-            <span className="text-accent font-semibold">Canada</span>.
+            <span className="text-accent font-semibold">Europe</span> and{' '}
+            <span className="text-accent font-semibold">America</span>.
           </p>
           
           <p className="text-white/70 text-xs sm:text-sm md:text-base leading-relaxed">
